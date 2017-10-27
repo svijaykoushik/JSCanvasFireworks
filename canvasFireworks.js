@@ -304,7 +304,7 @@ var CanvasFireworks = (function(){
              * @prop {Array}
              */
             this.coordinates = [];
-            this.coordinateCount = 3;
+            this.coordinateCount = 5;
 
             //populate initial coordinate collection with current coordinates
             while(this.coordinateCount--){
@@ -356,12 +356,12 @@ var CanvasFireworks = (function(){
                 //move to last tracked coordinates in the set and draw a line to current x and y
                 ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length -1][1]);
                 ctx.lineTo(this.x, this.y);
-                ctx.strokeStyle = 'hsl(' + hue + ', 100%, ', this.brightness + '%)';
+                ctx.strokeStyle = 'hsl(' + hue + ', 100%, ' + this.brightness + '%)';
                 ctx.stroke();
 
                 ctx.beginPath();
                 // draw target circle at target
-                ctx.arc(tx, ty, this.targetRadius,0, Math.PI * 2, false);
+                ctx.arc(this.tx, this.ty, this.targetRadius,0, Math.PI * 2);
                 ctx.stroke();
             };
 
