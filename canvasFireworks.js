@@ -144,8 +144,8 @@ var CanvasFireworks = (function(){
              * Total coordinates to be tracked.
              * The trailing is more prominent if the value is higher
              */
-            this.coordinateCount = settings.particleTrail || 5;
-            if(this.coordinateCount < 1) this.coordinateCount = 5;
+            this.coordinateCount = settings.particleTrail || 10;
+            if(this.coordinateCount < 1) this.coordinateCount = 10;
             
             //track the past coordinates to create a trailing effect.
             while(this.coordinateCount--){
