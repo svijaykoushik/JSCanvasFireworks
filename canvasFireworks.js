@@ -1,4 +1,7 @@
 /**
+ * @author S. Vijay Koushik {@link https://svijaykoushik.github.io/ | Author}
+ */
+/**
  * @classdesc
  * Creates fireworks effects on a canvas.
  * Fireworks are  targetted either randomly or by mouse co-ordinates.
