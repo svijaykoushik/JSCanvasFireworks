@@ -389,7 +389,7 @@ function(Phaser){
                  //move to last tracked coordinates in the set and draw a line to current x and y
                  ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length -1][1]);
                  ctx.lineTo(this.x, this.y);
-                 ctx.strokeStyle = 'hsl(' + Phaser.Plugin.VirtualFireworks.hue + ', 100%, ' + this.brightness + '%)';
+                 ctx.strokeStyle = 'hsl(' + hue + ', 100%, ' + this.brightness + '%)';
                  ctx.stroke();
      
                  ctx.beginPath();
