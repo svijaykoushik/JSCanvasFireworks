@@ -83,7 +83,7 @@ var CanvasFireworks = (function(){
          * @type {number}
          * @default
          */
-        var timerTotal = settings.autolauchTimer || 80;
+        var timerTotal = settings.autolauchTimer || 20;
         /**
          * Counts to time the number of animation cycles to decide the next launch.
          * @type {number}

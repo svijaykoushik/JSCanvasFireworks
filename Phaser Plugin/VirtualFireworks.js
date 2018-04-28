@@ -99,14 +99,13 @@ function(Phaser){
          * @property {number}
          * @default
          */
-        var timerTotal = 180;
+        var timerTotal = 80;
         /**
          * Counts to time the number of animation cycles to decide the next launch.
          * @property {number}
          * @default
          */
         var timerTick = 0;
-
         /**
          * Throws an error message.
          * @function _throw
@@ -514,6 +513,32 @@ function(Phaser){
                 timerTick++;
             }
         };
+
+        /**
+         * Nulls all proterties and methods of the plugin
+         * @method
+         */
+        this.destroy = function(){
+            this.settings = null;
+            bitmapCanvas = null;
+            ctx = null;
+            cw = null;
+            ch = null;
+            particles = null;
+            hue = null;
+            limiterTotal = null;
+            limiterTick = null;
+            timerTotal = null;
+            timerTick = null;
+            _throw = null;
+            random = null;
+            calculateDistance = null;
+            createParticles = null;
+            Particle = null;
+            Firework = null;
+            this.draw = null;
+            this.update = null;
+        }
     };
 
     /* Extend the phaser plugin template */
