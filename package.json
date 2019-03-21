@@ -1,0 +1,24 @@
+{
+  "name": "jscanvasfireworks",
+  "version": "0.0.1",
+  "description": "A javascript plugin for creating fireworks effect in HTML5 canvas",
+  "main": "canvasFireworks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp default"
+  },
+  "keywords": [
+    "javascript",
+    "plugin",
+    "fireworks",
+    "canvas"
+  ],
+  "author": "S. Vijaykoushik",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.3.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webserver": "^0.9.1"
+  }
+}

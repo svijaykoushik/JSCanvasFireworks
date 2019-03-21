@@ -50,6 +50,6 @@ Temporary Items
 .vscode/*
 node_modules/*
 debug/*
+build/*
 
 #Project Files
-package.json

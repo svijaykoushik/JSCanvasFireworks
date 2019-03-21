@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 inject = require('gulp-inject'),
-serve = require('gulp-webserver');
+serve = require('gulp-webserver'),
+uglify = require('gulp-uglify');
 /**
  * Task to copy the file to debug folder
  */
@@ -24,4 +25,14 @@ gulp.task('serveLocally', ['inject'],function(){
         port:3000,
         liveReload: true
     }));
+});
+
+/**
+ * Build task
+ * minify the js file
+ */
+gulp.task('default',function(){
+    return gulp.src("canvasFireworks.js")
+    .pipe(uglify())
+    .pipe(gulp.dest("./build/"));
 });
