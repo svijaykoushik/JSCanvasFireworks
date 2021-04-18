@@ -1,10 +1,10 @@
 /**
- * @author S. Vijay Koushik {@link https://svijaykoushik.github.io/ | Author}
+ * @author S. VijayKoushik {@link https://svijaykoushik.github.io/ | Author}
  */
 /**
  * @classdesc
  * Creates fireworks effects on a canvas.
- * Fireworks are  targetted either randomly or by mouse co-ordinates.
+ * Fireworks are  targeted either randomly or by mouse co-ordinates.
  * @param {object} canvas - the canvas object where the fireworks need to be rendered.
  * @param {object} options - Object containing the options that can be manipulated to change the fireworks.
  * @class
@@ -32,18 +32,18 @@ var CanvasFireworks = (function(){
          * @type {Object}
          * @default
          */
-        var ctx = ('getContext' in canvas) ? canvas.getContext("2d") : _throw ('The parameter canvas doesnot contain property \"getContext\"');
+        var ctx = ('getContext' in canvas) ? canvas.getContext("2d") : _throw ('The parameter canvas does not contain property \"getContext\"');
         /**
          * The width of the canvas.
          * @type {number}
          * @default
          */
-        var cw = ('width' in canvas) ? canvas.width : _throw ('The parameter canvas doesnot contain property \"width\"');
+        var cw = ('width' in canvas) ? canvas.width : _throw ('The parameter canvas does not contain property \"width\"');
         /**
          * @type {object} ch - The height of the canvas
          * @default
          */
-        var ch = ('getContext' in canvas) ? canvas.height : _throw ('The parameter canvas doesnot contain property \"height\"');
+        var ch = ('getContext' in canvas) ? canvas.height : _throw ('The parameter canvas does not contain property \"height\"');
         /**
          * Fireworks collection.
          * @type {Array}
@@ -57,7 +57,7 @@ var CanvasFireworks = (function(){
          */
         var particles = [];
         /**
-         * initial value of hue for hue saturaion and luminosity with alpha (hsla) color scheme.
+         * initial value of hue for hue saturation and luminosity with alpha (hsla) color scheme.
          * @type {number}
          * @default
          */
@@ -78,12 +78,12 @@ var CanvasFireworks = (function(){
          */
         var limiterTick = 0;
         /**
-         * The timer times the autolaunch of the fireworks when there is no mouse clicks.
+         * The timer times the auto launch of the fireworks when there is no mouse clicks.
          * Limits the launching to one per every specified number of animation cycles.
          * @type {number}
          * @default
          */
-        var timerTotal = settings.autolauchTimer || 20;
+        var timerTotal = settings.autoLaunchTimer || 20;
         /**
          * Counts to time the number of animation cycles to decide the next launch.
          * @type {number}
@@ -231,7 +231,7 @@ var CanvasFireworks = (function(){
                 //remove the last item in coordinates array
                 this.coordinates.pop();
 
-                //add current coordinates to the begining of coordinates array
+                //add current coordinates to the beginning of coordinates array
                 this.coordinates.unshift([this.x, this.y]);
 
                 //slow down the particles
@@ -299,7 +299,7 @@ var CanvasFireworks = (function(){
              * The distance between the starting point and target point.
              * @prop {number}
              */
-            this.distaceToTarget = calculateDistance(sx, sy, tx, ty);
+            this.distanceToTarget = calculateDistance(sx, sy, tx, ty);
             this.distanceTravelled = 0;
 
             /**
@@ -322,14 +322,14 @@ var CanvasFireworks = (function(){
 
             /**
              * The speed at which the fireworks travel.
-             * This propety can be configured via options parameter of CanvasFireworks
+             * This property can be configured via options parameter of CanvasFireworks
              * @prop {number}
              */
             this.speed = settings.speed || 2;
 
             /**
              * The acceleration of the firework from start to target.
-             * This propety can be configured via options parameter of CanvasFireworks
+             * This property can be configured via options parameter of CanvasFireworks
              * @prop {number}
              */
             this.acceleration = settings.acceleration || 1.05;
@@ -378,7 +378,7 @@ var CanvasFireworks = (function(){
                 //remove last item from coordinates array
                 this.coordinates.pop();
 
-                // add current coordinae to the beggining of coordinates array.
+                // add current coordinate to the beginning of coordinates array.
                 this.coordinates.unshift([this.x, this.y]);
 
                 //pulse the circle target indicator
@@ -411,8 +411,8 @@ var CanvasFireworks = (function(){
                 //calculate the distance travelled by firework after velocity is applied
                 this.distanceTravelled = calculateDistance(sx, sy, this.x + vx, this.y + vy);
 
-                //if the distace travelled is greater than the initial distance to target then target has been reached.
-                if(this.distanceTravelled >= this.distaceToTarget){
+                //if the distance travelled is greater than the initial distance to target then target has been reached.
+                if(this.distanceTravelled >= this.distanceToTarget){
                     // create an explosion
                     createParticles (this.tx, this.ty);
 
@@ -464,7 +464,7 @@ var CanvasFireworks = (function(){
                 particles[i].update(i);
             }
 
-            //auto launch fireworks if the wiat timer has exceeded waiting time
+            //auto launch fireworks if the wait timer has exceeded waiting time
             if(timerTick >= timerTotal){
                 //Start from the bottom middle to random target locations
                 fireworks.push(new Firework(cw/2, ch, random(0, cw), random(0,ch/2)));
